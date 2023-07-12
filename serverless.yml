@@ -5,8 +5,8 @@ provider:
   runtime: nodejs18.x
   region: us-east-1
   profile: default
-plugins:
-  - serverless-offline
+# plugins:
+  # - serverless-offline
 
 package:
   individually: true
