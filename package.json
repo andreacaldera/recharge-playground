@@ -4,6 +4,12 @@
   "license": "MIT",
   "scripts": {},
   "private": true,
+  "engines": {
+    "npm": "please-use-pnpm",
+    "node": "18",
+    "yarn": "please-use-pnpm",
+    "pnpm": ">=8"
+  },
   "dependencies": {
     "@nestjs/common": "^10.0.5",
     "@nestjs/core": "^10.0.5",
