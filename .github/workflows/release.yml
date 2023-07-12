@@ -27,8 +27,11 @@ jobs:
       - uses: ./.github/actions/prepare
 
       - run: |
+          set -x
           pnpm install serverless -g
           pnpm nx build recharge-playground
           cp package.json pnpm-lock.yaml dist/apps/recharge-playground/
           pnpm install --prod
-          AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY }} AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} sls deploy
+          	
+          serverless config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          sls deploy
