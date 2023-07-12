@@ -31,6 +31,7 @@ jobs:
           pnpm install serverless -g
           pnpm nx build recharge-playground
           cp package.json pnpm-lock.yaml dist/apps/recharge-playground/
+          cd dist/apps/recharge-playground/
           pnpm install --prod
           	
           serverless config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
