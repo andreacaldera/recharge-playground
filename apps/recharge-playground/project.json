@@ -1,0 +1,64 @@
+{
+  "name": "recharge-playground",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/recharge-playground/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/recharge-playground",
+        "main": "apps/recharge-playground/src/main.ts",
+        "tsConfig": "apps/recharge-playground/tsconfig.app.json",
+        "assets": ["apps/recharge-playground/src/assets"],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/recharge-playground/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "recharge-playground:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "recharge-playground:build:development"
+        },
+        "production": {
+          "buildTarget": "recharge-playground:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/recharge-playground/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/recharge-playground/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}
