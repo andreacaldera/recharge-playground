@@ -8,7 +8,7 @@
     "npm": "please-use-pnpm",
     "node": "18",
     "yarn": "please-use-pnpm",
-    "pnpm": ">=7.32.5"
+    "pnpm": ">=8"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.5",
