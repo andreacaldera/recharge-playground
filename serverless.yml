@@ -1,0 +1,29 @@
+service: recharge-playwright-nestjs
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  profile: default
+plugins:
+  - serverless-offline
+
+package:
+  individually: true
+  include:
+    - dist/apps/recharge-playground/**
+  exclude:
+    - '**'
+
+functions:
+  index:
+    handler: dist/apps/recharge-playground/main.handler
+    events:
+    - http:
+        cors: true
+        path: '/'
+        method: any
+    - http:
+        cors: true
+        path: '{proxy+}'
+        method: any

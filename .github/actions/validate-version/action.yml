@@ -1,0 +1,30 @@
+name: Validate Version
+description: A composite action that checks the version number for a deployed application
+
+inputs:
+  hostname:
+    description: the hostname for the deployed application i.e. https://pr-1234.azurewebsites.net
+    required: true
+  check-value:
+    description: Pass-in a value to check. Usually the commit hash of the branch HEAD
+    required: true
+  timeout-seconds:
+    description: Seconds to wait before attempt times out. Must only specify either minutes or seconds. Defaults to 20
+    default: "30"
+    required: false
+  max-attempts:
+    description: Number of attempts to make before failing the step. Defaults to 15
+    default: "20"
+    required: false
+
+runs:
+  using: composite
+  steps:
+    - uses: nick-fields/retry@v2.8.3
+      with:
+        timeout_seconds: ${{ inputs.timeout-seconds }}
+        max_attempts: ${{ inputs.max-attempts }}
+        command: |
+          set -x
+          IP=$(curl https://${{ inputs.hostname }}/version.txt)
+          echo $IP | grep ${{ inputs.check-value }}
