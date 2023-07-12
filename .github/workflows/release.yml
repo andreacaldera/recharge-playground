@@ -31,7 +31,7 @@ jobs:
           pnpm install serverless -g
           pnpm nx build recharge-playground
           cp package.json dist/apps/recharge-playground/
-          cp app/recharge-playground/serverless.yml dist/apps/recharge-playground/
+          cp apps/recharge-playground/serverless.yml dist/apps/recharge-playground/
           cd dist/apps/recharge-playground/
           npm install --prod
           	
