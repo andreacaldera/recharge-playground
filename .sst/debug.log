@@ -1,0 +1,14 @@
+2023-07-18T13:49:48.284Z   +254ms [debug] Config loaded {"version":"2.22.1","cdkVersion":"2.84.0","constructsVersion":"10.1.156","config":{"name":"recharge-playground-ui","region":"eu-west-2","stage":"staging","ssmPrefix":"/sst/recharge-playground-ui/staging/"},"metafile":{"inputs":{"sst.config.ts":{"bytes":226,"imports":[{"path":"sst","kind":"import-statement","external":true},{"path":"sst/constructs","kind":"import-statement","external":true}],"format":"esm"}},"outputs":{".sst.config.1689688188255.mjs":{"imports":[],"exports":["default"],"entryPoint":"sst.config.ts","inputs":{"sst.config.ts":{"bytesInOutput":137}},"bytes":319}}},"paths":{"config":"/Users/andrea/code/recharge-playground/sst.config.ts","root":"/Users/andrea/code/recharge-playground","out":"/Users/andrea/code/recharge-playground/.sst","artifacts":"/Users/andrea/code/recharge-playground/.sst/artifacts"}}
+2023-07-18T13:49:49.065Z   +781ms [debug] Using AWS profile 
+2023-07-18T13:49:49.073Z     +8ms [debug] Created AWS client STSClient
+2023-07-18T13:49:49.074Z     +1ms [debug] Fetching app metadata
+2023-07-18T13:49:49.074Z     +0ms [debug] Initializing bootstrap context
+2023-07-18T13:49:49.075Z     +1ms [debug] Created AWS client CloudFormationClient
+2023-07-18T13:49:49.450Z   +375ms [debug] Loaded bootstrap status
+2023-07-18T13:49:49.450Z     +0ms [debug] Bootstrap context initialized {"status":"ready","version":"7.2","bucket":"sstbootstrap-euwest292dc64b9-i02t43m5v9mz"}
+2023-07-18T13:49:49.642Z   +192ms [debug] Using identity Account: 962737053083 User: AIDA6AJ4ZTWNQJEXICB5L
+2023-07-18T13:49:49.917Z   +275ms [debug] Fetching app metadata: not found
+2023-07-18T13:49:49.970Z    +53ms [debug] Synthesizing stacks...
+2023-07-18T13:49:50.043Z    +72ms [debug] Generating types in /Users/andrea/code/recharge-playground/.sst/types
+2023-07-18T13:49:50.043Z     +1ms [debug] Running 1 deferred tasks with concurrency: 11
+2023-07-18T13:49:50.043Z     +0ms [debug] Running "pnpm nx build recharge && cd dist/apps/recharge && ls -la" script

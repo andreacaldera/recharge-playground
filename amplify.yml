@@ -1,0 +1,14 @@
+version: 1
+env:
+  variables:
+    key: value
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - pnpm install
+    build:
+      commands:
+        - pnpm nx build recharge
+    artifacts:
+      baseDirectory: dist/apps/recharge    

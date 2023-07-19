@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-rechargespikenextjs-dev-100453-authRole",
+      "UnauthRoleArn": "arn:aws:iam::962737053083:role/amplify-rechargespikenextjs-dev-100453-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::962737053083:role/amplify-rechargespikenextjs-dev-100453-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-rechargespikenextjs-dev-100453-deployment",
+      "UnauthRoleName": "amplify-rechargespikenextjs-dev-100453-unauthRole",
+      "StackName": "amplify-rechargespikenextjs-dev-100453",
+      "StackId": "arn:aws:cloudformation:eu-west-2:962737053083:stack/amplify-rechargespikenextjs-dev-100453/ff8eda70-2480-11ee-b6be-0a649fe12144",
+      "AmplifyAppId": "d3smegwpfdwgxh"
+    }
+  }
+}
