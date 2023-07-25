@@ -1,26 +1,8 @@
 import type { Serverless } from 'serverless/aws';
+import { baseServerlessConfiguration } from '../../../serverless.base';
 
 const serverlessConfiguration = <Serverless>{
-  frameworkVersion: '3',
-  package: {
-    individually: true,
-    excludeDevDependencies: true,
-  },
-  plugins: [],
-
-  provider: {
-    name: 'aws',
-    runtime: 'nodejs18.x',
-    memorySize: 128,
-    apiGateway: {
-      minimumCompressionSize: 1024,
-    },
-    stage: 'dev', // todo dev / prod / prs
-    environment: {
-      AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
-    },
-    region: 'eu-west-2',
-  },
+  ...baseServerlessConfiguration,
   service: 'recharge-playwright-nestjs',
   functions: {
     index: {
