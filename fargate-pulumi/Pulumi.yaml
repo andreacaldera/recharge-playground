@@ -1,0 +1,3 @@
+name: fargate-pulumi
+runtime: nodejs
+description: recharge playground fargate
