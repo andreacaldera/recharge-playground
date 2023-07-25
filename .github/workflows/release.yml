@@ -17,10 +17,14 @@ jobs:
 
       - uses: ./.github/actions/prepare
 
-  deploy:
-    needs: prepare
-    name: Deploy
+  release:
+    name: Release
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        app:
+          - recharge-playground
+          # - playment-service
     steps:
       - uses: actions/checkout@v3
 
@@ -29,10 +33,12 @@ jobs:
       - name: Deploy application
         run: |
           set -x
+          APP=${{ matrix.app }}
           pnpm install serverless -g
-          pnpm nx build recharge-playground
-          cd dist/apps/recharge-playground/
+          pnpm nx build ${APP}
+          cd dist/apps/${APP}/
+          # todo use pnpm
           npm install --prod
-          	
+            
           serverless config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           sls deploy --stage=dev

@@ -17,6 +17,7 @@
     "axios": "^1.0.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.0",
+    "serverless-esbuild": "^1.46.0",
     "serverless-lambda-nestjs": "^0.0.2",
     "serverless-layers": "^2.6.1",
     "tslib": "^2.3.0"
