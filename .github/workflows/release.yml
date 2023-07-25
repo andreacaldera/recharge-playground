@@ -37,7 +37,7 @@ jobs:
           set -x
           APP=${{ matrix.app }}
           pnpm install serverless -g
-          pnpm nx build ${APP} --skip-nx-cache
+          pnpm nx build ${APP}
           cd dist/apps/${APP}/
           # todo use pnpm
           npm install --prod
