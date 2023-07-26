@@ -1,17 +1,10 @@
 import type { Serverless } from 'serverless/aws';
+import { baseServerlessConfiguration } from '../../../serverless.base';
 
 const isOffline = process.env.IS_OFFLINE === 'true';
 
-console.log(`SLS offline mode: ${isOffline}`);
-
 const serverlessConfiguration = <Serverless>{
-  // todo use parent config
-  frameworkVersion: '3',
-  package: {
-    individually: true,
-    excludeDevDependencies: true,
-  },
-  plugins: isOffline ? ['serverless-esbuild', 'serverless-offline'] : [],
+  ...baseServerlessConfiguration,
   provider: {
     name: 'aws',
     runtime: 'nodejs18.x',
@@ -25,6 +18,13 @@ const serverlessConfiguration = <Serverless>{
     },
     region: 'eu-west-2',
   },
+  iamRoleStatements: [
+    {
+      Effect: 'Allow',
+      Action: ['lambda:InvokeFunction'],
+      Resource: '*',
+    },
+  ],
   service: 'payment-service',
   functions: {
     hello: {
@@ -32,7 +32,5 @@ const serverlessConfiguration = <Serverless>{
     },
   },
 };
-
-console.log(`Using config ${JSON.stringify(serverlessConfiguration)}`);
 
 module.exports = serverlessConfiguration;
