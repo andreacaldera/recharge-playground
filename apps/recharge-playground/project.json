@@ -14,10 +14,7 @@
         "outputPath": "dist/apps/recharge-playground",
         "main": "apps/recharge-playground/src/main.ts",
         "tsConfig": "apps/recharge-playground/tsconfig.app.json",
-        "assets": [
-          "apps/recharge-playground/src/assets",
-          "apps/recharge-playground/src/serverless.ts"
-        ],
+        "assets": ["apps/recharge-playground/src/assets"],
         "isolatedConfig": true,
         "webpackConfig": "apps/recharge-playground/webpack.config.js",
         "generatePackageJson": true

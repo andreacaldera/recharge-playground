@@ -38,6 +38,7 @@ jobs:
           APP=${{ matrix.app }}
           pnpm install serverless -g
           pnpm nx build ${APP}
+          cp apps/${APP}/serverless.ts dist/apps/${APP}/
           cd dist/apps/${APP}/
           # todo use pnpm
           npm install --prod

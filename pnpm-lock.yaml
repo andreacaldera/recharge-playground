@@ -5407,22 +5407,6 @@ packages:
       watchpack: 2.4.0
     dev: false
 
-  /aws-sdk@2.1414.0:
-    resolution: {integrity: sha512-WhqTWiTZRUxWITvUG5VMPYGdCLNAm4zOTDIiotbErR9x+uDExk2CAGbXE8HH11+tD8PhZVXyukymSiG+7rJMMg==}
-    engines: {node: '>= 10.0.0'}
-    dependencies:
-      buffer: 4.9.2
-      events: 1.1.1
-      ieee754: 1.1.13
-      jmespath: 0.16.0
-      querystring: 0.2.0
-      sax: 1.2.1
-      url: 0.10.3
-      util: 0.12.5
-      uuid: 8.0.0
-      xml2js: 0.5.0
-    dev: true
-
   /aws-sdk@2.1422.0:
     resolution: {integrity: sha512-dBHCT42s2NOrZVSeKQ+I0kPsAPN0QhbKv05gQFQL79yGIOqLZawWos8vtKSYdp9wEOpiIRttB7m6usYJObKpWA==}
     engines: {node: '>= 10.0.0'}
@@ -5437,7 +5421,6 @@ packages:
       util: 0.12.5
       uuid: 8.0.0
       xml2js: 0.5.0
-    dev: false
 
   /aws-serverless-express@3.4.0:
     resolution: {integrity: sha512-YG9ZjAOI9OpwqDDWzkRc3kKJYJuR7gTMjLa3kAWopO17myoprxskCUyCEee+RKe34tcR4UNrVtgAwW5yDe74bw==}
@@ -11670,7 +11653,7 @@ packages:
       ajv: 8.12.0
       ajv-formats: 2.1.1(ajv@8.12.0)
       archiver: 5.3.1
-      aws-sdk: 2.1414.0
+      aws-sdk: 2.1422.0
       bluebird: 3.7.2
       cachedir: 2.3.0
       chalk: 4.1.2

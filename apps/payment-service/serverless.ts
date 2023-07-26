@@ -1,5 +1,9 @@
 import type { Serverless } from 'serverless/aws';
 
+const isOffline = true; // process.env.IS_OFFLINE === 'true';
+
+console.log(`SLS offline mode: ${isOffline}`);
+
 const serverlessConfiguration = <Serverless>{
   // todo use parent config
   frameworkVersion: '3',
@@ -7,7 +11,7 @@ const serverlessConfiguration = <Serverless>{
     individually: true,
     excludeDevDependencies: true,
   },
-  plugins: ['serverless-esbuild', 'serverless-offline'],
+  plugins: isOffline ? ['serverless-esbuild', 'serverless-offline'] : [],
   provider: {
     name: 'aws',
     runtime: 'nodejs18.x',
@@ -24,7 +28,7 @@ const serverlessConfiguration = <Serverless>{
   service: 'payment-service',
   functions: {
     hello: {
-      handler: 'src/main.hello',
+      handler: isOffline ? 'src/main.hello' : 'main.hello',
     },
   },
 };

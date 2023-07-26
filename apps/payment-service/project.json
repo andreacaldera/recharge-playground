@@ -14,7 +14,7 @@
         "outputPath": "dist/apps/payment-service",
         "main": "apps/payment-service/src/main.ts",
         "tsConfig": "apps/payment-service/tsconfig.app.json",
-        "assets": ["apps/payment-service/src/serverless.ts"],
+        "assets": [],
         "isolatedConfig": true,
         "webpackConfig": "apps/payment-service/webpack.config.js",
         "generatePackageJson": true
