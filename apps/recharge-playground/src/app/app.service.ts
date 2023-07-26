@@ -27,6 +27,8 @@ export class AppService {
     const { add } = body;
 
     const test: LibraryOne = libraryOne();
-    return { message: `Hello API: ${test.first}; result from lambda: ${add}` };
+    return {
+      message: `Hello API 1: ${test.first}; result from lambda: ${add}`,
+    };
   }
 }
