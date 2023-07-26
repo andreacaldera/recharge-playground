@@ -18,5 +18,16 @@ export const baseServerlessConfiguration: Partial<Serverless> = {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
     },
     region: 'eu-west-2',
+    iam: {
+      role: {
+        statements: [
+          {
+            Effect: 'Allow',
+            Action: ['lambda:InvokeFunction'],
+            Resource: '*',
+          },
+        ],
+      },
+    },
   },
 };
