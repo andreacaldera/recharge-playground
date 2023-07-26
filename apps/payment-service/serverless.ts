@@ -1,6 +1,6 @@
 import type { Serverless } from 'serverless/aws';
 
-const isOffline = true; // process.env.IS_OFFLINE === 'true';
+const isOffline = process.env.IS_OFFLINE === 'true';
 
 console.log(`SLS offline mode: ${isOffline}`);
 
@@ -32,5 +32,7 @@ const serverlessConfiguration = <Serverless>{
     },
   },
 };
+
+console.log(`Using config ${JSON.stringify(serverlessConfiguration)}`);
 
 module.exports = serverlessConfiguration;
