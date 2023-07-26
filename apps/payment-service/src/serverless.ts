@@ -24,7 +24,7 @@ const serverlessConfiguration = <Serverless>{
   service: 'payment-service',
   functions: {
     hello: {
-      handler: 'src/handler.hello',
+      handler: 'src/main.hello',
     },
   },
 };
