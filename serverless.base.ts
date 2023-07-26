@@ -6,7 +6,6 @@ export const baseServerlessConfiguration: Partial<Serverless> = {
     individually: true,
     excludeDevDependencies: true,
   },
-
   provider: {
     name: 'aws',
     runtime: 'nodejs18.x',

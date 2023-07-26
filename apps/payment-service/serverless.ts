@@ -18,13 +18,6 @@ const serverlessConfiguration = <Serverless>{
     },
     region: 'eu-west-2',
   },
-  iamRoleStatements: [
-    {
-      Effect: 'Allow',
-      Action: ['lambda:InvokeFunction'],
-      Resource: '*',
-    },
-  ],
   service: 'payment-service',
   functions: {
     hello: {

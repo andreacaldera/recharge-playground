@@ -7,7 +7,7 @@ export class AppService {
   async getData(): Promise<{ message: string }> {
     const isOffline = process.env.IS_OFFLINE === 'true';
     const params = {
-      FunctionName: `payment-service-${isOffline ? 'local' : 'stage'}-hello`,
+      FunctionName: `payment-service-${isOffline ? 'local' : 'dev'}-hello`,
       InvocationType: 'RequestResponse',
       Payload: JSON.stringify({ numbers: [1, 2, 3] }),
     };
