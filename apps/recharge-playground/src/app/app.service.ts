@@ -23,7 +23,6 @@ export class AppService {
     }
 
     const body = JSON.parse(JSON.parse(response.Payload as string).body);
-    console.log(111, body);
     const { add } = body;
 
     const test: LibraryOne = libraryOne();

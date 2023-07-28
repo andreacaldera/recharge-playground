@@ -15,5 +15,10 @@ rm -fr dist/apps/${APP_NAME}/
 pnpm nx build ${APP_NAME}
 cp apps/${APP_NAME}/serverless.ts dist/apps/${APP_NAME}/
 cd dist/apps/${APP_NAME}/
-npm install --production
+
+if [ "$APP_NAME" == "recharge-playground" ]; then
+    echo "Installing node modules with npm"
+    npm install --omit=dev
+fi
+
 sls deploy --stage=dev # todo use param

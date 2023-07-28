@@ -29,7 +29,7 @@
       "options": {
         "cwd": "apps/payment-service",
         "color": true,
-        "command": "sls offline start --reloadHandler --stage=local --lambdaPort 3002 --httpPort 3003"
+        "command": "IS_OFFLINE=true sls offline start --reloadHandler --stage=local --lambdaPort 3002 --httpPort 3003"
       }
     },
     "deploy": {
