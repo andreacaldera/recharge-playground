@@ -1,9 +1,12 @@
 import type { Serverless } from 'serverless/aws';
-import { baseServerlessConfiguration } from '../../../serverless.base';
 
 const isOffline = process.env.IS_OFFLINE === 'true';
 
 console.log(`is offline?`, isOffline);
+
+const { baseServerlessConfiguration } = isOffline
+  ? require('../../serverless.base')
+  : require('../../../serverless.base');
 
 const serverlessConfiguration = <Serverless>{
   ...baseServerlessConfiguration,
